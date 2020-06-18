@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+    <display-name>Web Application</display-name>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+    <servlet>
+        <servlet-name>JerseyServlet</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>ru.surpavel.university.web.rest</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>homeServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+
+    <!--chair -->
+    <servlet>
+        <servlet-name>chairServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>createChairServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateChairServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteChairServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+
+    <!--group -->
+    <servlet>
+        <servlet-name>groupServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>createGroupServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateGroupServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteGroupServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+
+
+    <!--student -->
+    <servlet>
+        <servlet-name>studentServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>createStudentServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateStudentServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteStudentServlet</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>homeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <!--chair -->
+    <servlet-mapping>
+        <servlet-name>chairServlet</servlet-name>
+        <url-pattern>/chairs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createChairServlet</servlet-name>
+        <url-pattern>/createChair</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateChairServlet</servlet-name>
+        <url-pattern>/updateChair</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteChairServlet</servlet-name>
+        <url-pattern>/deleteChair</url-pattern>
+    </servlet-mapping>
+
+    <!--group -->
+    <servlet-mapping>
+        <servlet-name>groupServlet</servlet-name>
+        <url-pattern>/groups</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createGroupServlet</servlet-name>
+        <url-pattern>/createGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateGroupServlet</servlet-name>
+        <url-pattern>/updateGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteGroupServlet</servlet-name>
+        <url-pattern>/deleteGroup</url-pattern>
+    </servlet-mapping>
+
+
+    <!--student -->
+    <servlet-mapping>
+        <servlet-name>studentServlet</servlet-name>
+        <url-pattern>/students</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createStudentServlet</servlet-name>
+        <url-pattern>/createStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateStudentServlet</servlet-name>
+        <url-pattern>/updateStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteStudentServlet</servlet-name>
+        <url-pattern>/deleteStudent</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    
+     <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/WEB-INF/pages/error.jsp</location>
+    </error-page> 
+    
+    <servlet-mapping>
+        <servlet-name>JerseyServlet</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

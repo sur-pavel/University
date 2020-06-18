@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="Error" fileName="${catalina.base}/logs/error.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d [%-5p][%-9.9t][%16c{-3}] - %m%n" />
+        </File>
+        <File name="Info" fileName="${catalina.base}/logs/info.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d [%-5p][%-9.9t][%16c{-3}] - %m%n" />
+        </File>
+        <File name="Debug" fileName="${catalina.base}/logs/debug.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d [%-5p][%-9.9t][%16c{-3}] - %m%n" />
+        </File>
+        <File name="Trace" fileName="${catalina.base}/logs/trace.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d [%-5p][%-9.9t][%16c{-3}] - %m%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Trace" level="TRACE" />
+            <AppenderRef ref="Debug" level="DEBUG" />
+            <AppenderRef ref="Info" level="INFO" />
+            <AppenderRef ref="Error" level="ERROR" />
+        </Root>
+    </Loggers>
+</Configuration>
+
